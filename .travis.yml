@@ -1,0 +1,15 @@
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+node_js:
+  - '10'
+  - '8'
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
