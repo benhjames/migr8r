@@ -9,7 +9,7 @@ Easily run Postgres migrations using SQL files
 [![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/benhjames/migr8r?branch=master&svg=true)](https://ci.appveyor.com/project/benhjames/migr8r/branch/master)
 [![Codecov](https://codecov.io/gh/benhjames/migr8r/branch/master/graph/badge.svg)](https://codecov.io/gh/benhjames/migr8r)
 [![Downloads/week](https://img.shields.io/npm/dw/migr8r.svg)](https://npmjs.org/package/migr8r)
-[![License](https://img.shields.io/npm/l/migr8r.svg)](https://github.com/benhjames/migr8r/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/migr8r.svg)](https://github.com/benhjames/migr8r/blob/master/package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/benhjames/migr8r.svg)](https://greenkeeper.io/)
 
 <!-- toc -->
 * [Usage](#usage)
