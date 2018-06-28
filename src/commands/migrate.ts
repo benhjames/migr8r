@@ -13,7 +13,7 @@ Migrating...
   ];
 
   public static flags = {
-    connectionString: flags.string({ char: "c", required: true }),
+    connectionString: flags.string({ char: "c" }),
     dir: flags.string({ char: "d", default: "." }),
     help: flags.help({ char: "h" })
   };
@@ -23,13 +23,19 @@ Migrating...
       flags: { connectionString, dir }
     } = this.parse(Migrate);
 
+    if (!connectionString && !process.env.DATABASE_URL) {
+      this.error("No connection string provided.");
+    }
+
     let paths = await glob(`${dir}/*.sql`);
     const regex = /[$\/\\]\d{4}-\d{2}-\d{2}-\d{2}-\d{2}-\d{2}-.+.sql/i;
     paths = paths.filter(path => regex.test(path));
     paths.sort();
 
     const pgConfig = pgp();
-    const db = pgConfig({ connectionString });
+    const db = pgConfig({
+      connectionString: connectionString || process.env.DATABASE_URL
+    });
 
     await db.tx(async tx => {
       await tx.query("create schema if not exists postgres_migrator");

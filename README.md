@@ -34,6 +34,7 @@ USAGE
 * [`migr8r help [COMMAND]`](#migr-8-r-help-command)
 * [`migr8r migrate`](#migr-8-r-migrate)
 * [`migr8r migrate:create NAME`](#migr-8-r-migratecreate-name)
+* [`migr8r run [PATH]`](#migr-8-r-run-path)
 
 ## `migr8r help [COMMAND]`
 
@@ -61,7 +62,7 @@ USAGE
   $ migr8r migrate
 
 OPTIONS
-  -c, --connectionString=connectionString  (required)
+  -c, --connectionString=connectionString
   -d, --dir=dir                            [default: .]
   -h, --help                               show CLI help
 
@@ -93,4 +94,23 @@ EXAMPLE
 ```
 
 _See code: [src/commands/migrate/create.ts](https://github.com/benhjames/migr8r/blob/v0.0.0/src/commands/migrate/create.ts)_
+
+## `migr8r run [PATH]`
+
+Run .sql files
+
+```
+USAGE
+  $ migr8r run [PATH]
+
+OPTIONS
+  -c, --connectionString=connectionString
+  -h, --help                               show CLI help
+
+EXAMPLE
+  $ migr8r run path/to/file.sql
+  Running...
+```
+
+_See code: [src/commands/run.ts](https://github.com/benhjames/migr8r/blob/v0.0.0/src/commands/run.ts)_
 <!-- commandsstop -->
